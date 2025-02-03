@@ -1,7 +1,24 @@
-// Используем ReactDOM.render для отображения React-элемента на странице.
-// 1. Первый аргумент — это React-элемент (JSX), содержащий два заголовка: <h1> и <h2>.
-// 2. Второй аргумент — это DOM-элемент с id="app", в который будет вставлен данный React-элемент.
-ReactDOM.render(<div>
-                    <h1>Привет</h1>
-                    <h2>World</h2>
-                </div>, document.getElementById("app"))
+// Без использования JSX
+//ReactDOM.render(React.createElement("input", {
+//    placeholder: "Help text",
+//    onClick: () => console.log("clicked"),
+//    onMouseEnter: () => console.log("mouse over"),
+//}), document.getElementById("app"))
+
+//function inputclick( ){
+//    console.log("click")
+//}
+
+const inputclick = () => console.log("click")
+const mouseover = () => console.log("mouse over")
+
+const helptext = "Help text!"
+
+const elements = <div className="name">
+                    <h1>{helptext}</h1>
+                    <input placeholder={helptext} onClick={inputclick} onMouseEnter={mouseover}/>
+                    <p>{helptext == "Help text!" ? "Yes" : "No"}</p>
+                </div>
+const app = document.getElementById("app")
+
+ReactDOM.render(elements, app)
