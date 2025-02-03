@@ -4,7 +4,7 @@ import * as ReactDOMclient from 'react-dom/client'
 const inputclick = () => console.log("click")
 const mouseover = () => console.log("mouse over")
 
-const helptext = "Help text"
+const helptext = "help text"
 
 const elements = (<div className="name">
                     <h1>{helptext}</h1>
@@ -14,5 +14,3 @@ const elements = (<div className="name">
 
 const app = ReactDOMclient.createRoot(document.getElementById('app'));
 app.render(elements)
-
-
